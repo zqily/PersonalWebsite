@@ -1,0 +1,151 @@
+<!-- ./tutorials/ai/ai.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // AI-Powered Development Guide</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../global.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="../obs/obs.css"> <!-- Re-use OBS guide base styles -->
+    <link rel="stylesheet" href="ai.css"> <!-- AI-specific styles -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">zqil</a>
+            <ul>
+                <li><a href="../../projects/projects.html">Projects</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="guide-hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>AI-Powered Development</h1>
+            <p class="subtitle">A guide to my personal workflow for building entire projects with modern Large Language Models (LLMs).</p>
+            <div class="guide-disclaimer" data-aos="fade-up" data-aos-delay="100">
+                <strong>Note:</strong> The AI landscape changes daily. The models and techniques here are current as of mid-2025, but always check the latest benchmarks and features. The core principles, however, remain valuable.
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section guide-content">
+            <div data-aos="fade-up">
+                <h2>The Evolution of an AI Coder</h2>
+                <p>My journey into AI development has mirrored the rapid evolution of the technology itself. Just over a year ago, I was wrestling with <strong>Claude 3.5 Sonnet</strong> to build basic websites. Its 8,000 token output limit felt like a straitjacket, forcing me to constantly break down code into tiny, unmanageable chunks. The free tier was so restrictive I had to juggle three separate accounts just for a two-hour coding session.</p>
+                <p>Then came Google's models. <strong>Gemini 2.0 Pro</strong> was a huge leap forward, allowing me to build FNote v1. But the real game-changer was <strong>Gemini 2.5 Pro</strong> (who I'm working with right now to write this page). With a massive 65,000+ token output limit and an almost nonexistent free-tier restriction (150 requests/minute!), the floodgates opened. I could now generate thousands of lines of code for complex projects like FNote v2 without the AI breaking a sweat. It’s a completely different world.</p>
+            </div>
+
+            <div data-aos="fade-up">
+                <h2>Meet the Contenders</h2>
+                <p>Choosing the right AI is crucial. They each have distinct personalities and strengths. For up-to-the-minute rankings, <a href="https://livebench.ai/#/" target="_blank">LiveBench.ai</a> is an excellent resource. Here’s my "Pokedex" entry for the big three:</p>
+                
+                <div class="ai-arena">
+                    <div class="ai-selectors">
+                        <button class="ai-selector active" data-target="chatgpt-card">ChatGPT</button>
+                        <button class="ai-selector" data-target="gemini-card">Gemini</button>
+                        <button class="ai-selector" data-target="claude-card">Claude</button>
+                    </div>
+                    <div class="ai-card-container">
+                        <!-- ChatGPT Card -->
+                        <div class="ai-card active" id="chatgpt-card">
+                            <h3>ChatGPT: The Popular All-Rounder</h3>
+                            <p>The friendly kid everyone knows. Its biggest strength is customization; you can tailor its personality and response style to your exact needs. It has a massive feature set including web search, image generation, and a "deep research" mode that consults dozens of sources. It's a fantastic, versatile tool, but its coding-specific limits can be frustrating for large projects.</p>
+                            <ul>
+                                <li><strong>Tone:</strong> Informal-Semi-Formal (but highly customizable).</li>
+                                <li><strong>Input/Output Limit:</strong> ~32k input / 4k output.</li>
+                                <li><strong>Speed (Free):</strong> Fast (o4-mini).</li>
+                                <li><strong>Free Limits:</strong> Limited prompts, 3 image gens/day, 5 deep researches/month.</li>
+                            </ul>
+                        </div>
+                        <!-- Gemini Card -->
+                        <div class="ai-card" id="gemini-card">
+                            <h3>Gemini: The Brute-Force Coder</h3>
+                            <p>My go-to assistant for development. Gemini's strength is raw power. With a 1 million token input and 65k output limit, it's nearly impossible to overwhelm. It can write thousands of lines of high-quality code in a single go. While it lacks ChatGPT's deep customization, its sheer coding capacity and analytical prowess are second to none for serious projects.</p>
+                             <ul>
+                                <li><strong>Tone:</strong> Formal and comprehensive.</li>
+                                <li><strong>Input/Output Limit:</strong> 1,048,576 input / 65,536 output.</li>
+                                <li><strong>Speed (Free):</strong> Medium-Fast (2.5 Pro).</li>
+                                <li><strong>Free Limits:</strong> 150 requests/minute (practically unlimited for solo dev). unlimited image generation (flash 2.0 image gen), limited image gen (imagen 3.0)</li>
+                            </ul>
+                        </div>
+                        <!-- Claude Card -->
+                        <div class="ai-card" id="claude-card">
+                           <h3>Claude: The OG Specialist</h3>
+                           <p>The ol' reliable. Claude was once the king of coding, and some benchmarks still place its raw coding ability slightly ahead of others. However, it has fallen behind in versatility and user-friendliness. Its strict free tier and lack of features like image generation make it a niche choice today, best for users who need its specific flavor of code generation and nothing else.</p>
+                            <ul>
+                                <li><strong>Tone:</strong> Semi-Formal.</li>
+                                <li><strong>Input/Output Limit:</strong> ~128k input / 8k output.</li>
+                                <li><strong>Speed (Free):</strong> Medium.</li>
+                                <li><strong>Free Limits:</strong> Very restrictive, even for basic chat. No image generation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up">
+                <h2>My Workflow: A Live Example</h2>
+                <p>How do I actually code with an AI? Well, you're looking at the result of the process right now. I'm not writing this HTML by hand; I'm instructing Gemini to do it. Here is a summary of the prompt I used to generate this very page:</p>
+                <div class="prompt-box">
+                    <p><strong>Initial Command:</strong> "Let's create the AI coding page. It shares a similar layout as the OBS page, and will be written in `./tutorials/ai/ai.html`."</p>
+                    <p><strong>Content Breakdown:</strong></p>
+                    <ol>
+                        <li>A short story on AI progress (Claude -> Gemini).</li>
+                        <li>A link to `livebench.ai`.</li>
+                        <li>An interactive "Pokedex" comparing ChatGPT, Gemini, and Claude with specific details and stats for each.</li>
+                        <li>An explanation of the workflow, analyzing this very prompt.</li>
+                        <li>A "Tips & Tricks" section.</li>
+                        <li>A story box about the TSB wiki minigame failure with Claude.</li>
+                    </ol>
+                </div>
+                <p>By providing a clear structure, existing files for reference (`obs.html`), and detailed content points, I guide the AI to produce exactly what I envision. I act as the architect; the AI is the builder.</p>
+            </div>
+            
+            <div data-aos="fade-up">
+                <h2>Tips & Tricks</h2>
+                <ol>
+                    <li><strong>Go Wide, AND Deep:</strong> Open multiple tabs of Gemini in <a href="https://aistudio.google.com" target="_blank">AI Studio</a> and assign them all with the same task. Thanks to the lenient rate limits, you can have multiple shots of getting the correct code simultaneously. Gemini can usually 1-shot the code, but this tactic is useful for complex requests.</li>
+                    <li><strong>Universal Adapter (`.txt`):</strong> If you need to send a file type the AI doesn't support, just convert it to `.txt`. I do this constantly to feed the AI entire project structures and code files for context. I even had Gemini write a Python script to automate this for me.</li>
+                    <li><strong>The "Nuke & Pave" Method:</strong> Sometimes, trying to make an AI debug its own broken code is a waste of time. If a feature isn't working after one or two attempts at a fix, it's often faster to scrap the new code, go back to the last working version, and re-prompt the AI with a fresh, clearer instruction. The Universal Adapter script is also useful for keeping backups.</li>
+                    <li><strong>AI-ception:</strong> Use the AI to improve your prompts. If I'm stuck on how to improve or what to add on FNote v2, I'll ask Gemini to create an "Action Plan." It will often break down the problem into logical steps, suggesting UI/UX improvements and features I hadn't considered, which I then turn into new prompts.</li>
+                </ol>
+            </div>
+            
+            <div class="story-box" data-aos="fade-up">
+                <h3>A Quick Story: The Minigame That Couldn't Be</h3>
+                <p>Before Gemini even existed, I was using Claude Sonnet 3.5 to build a small wiki website for TSB. One feature I was excited about was a contributions page with a fun twist: a top-down 2D arena where contributors' avatars would fight. It was ambitious, and Claude was... not up to the task.</p>
+                <p>No matter how many times I prompted, the result was a buggy mess. The physics were wrong, the UI was broken, and it just wouldn't work. Each attempt ate into my tiny free-tier prompt limit, making the process incredibly frustrating. The project was too complex for the AI's limited context and output size. It's a perfect example of a creative idea that was simply impossible to realize with the tools of the time, but would be a straightforward task for a model like Gemini 2.5 Pro today.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Global & Page-Specific Scripts -->
+    <script src="../../global.js"></script>
+    <script src="ai.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+/* ./tutorials/obs/obs.css */
+/* Styles for the OBS guide page. */
+
+/* Hero section for the guide */
+.guide-hero {
+    text-align: center;
+    padding: 100px 2rem 50px;
+    background: linear-gradient(180deg, rgba(16, 16, 28, 0.5) 0%, var(--bg-primary) 100%);
+}
+
+.guide-hero h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 20px var(--glow-color);
+}
+
+.guide-hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 1rem auto 0;
+}
+
+.guide-disclaimer {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background-color: rgba(243, 156, 18, 0.1);
+    border: 1px solid rgba(243, 156, 18, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* Main content area for the guide */
+.guide-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: left;
+}
+
+.guide-content h2 {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    display: block; /* Override global styles */
+}
+
+/* Remove ::after from global h2 */
+.guide-content h2::after {
+    display: none;
+}
+
+
+.guide-content p, .guide-content li {
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.guide-content strong {
+    color: var(--text-primary);
+}
+
+.guide-content code {
+    background-color: var(--bg-secondary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--accent-hover);
+    font-size: 1rem;
+}
+
+.guide-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.guide-content ul li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.guide-content ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.guide-content ol {
+    padding-left: 2rem;
+}
+
+.guide-content ol li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.guide-content ol li::marker {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Preset Box Styling */
+.preset-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.preset-box h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--accent-color);
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.setting {
+    background-color: var(--bg-secondary);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Container for the setting name and info icon */
+.setting-title-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Updated from original to work inside flex container */
+.setting-name {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.setting-value {
+    display: block;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+/* Info Marker and Tooltip Styles */
+.info-marker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard */
+}
+
+.info-marker:hover, .info-marker:focus {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    outline: none;
+}
+
+.info-marker .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 150%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    color: var(--text-secondary);
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    z-index: 10;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Delay visibility hiding */
+    text-transform: none; /* Reset text transform from setting-name */
+    pointer-events: none; /* Prevent tooltip from capturing hover */
+}
+
+/* Arrow for the tooltip */
+.info-marker .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--bg-secondary) transparent transparent transparent;
+    z-index: 11;
+}
+
+.info-marker:hover .tooltip,
+.info-marker:focus-within .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.tooltip p {
+    margin: 0 0 0.75rem 0;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+}
+
+.tooltip p:last-child {
+    margin-bottom: 0;
+}
+
+.tooltip strong {
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+
+
+.file-size-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.file-size-info strong {
+    color: var(--accent-color);
+}
+
+.troubleshooting-box {
+    background-color: rgba(231, 76, 60, 0.05);
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.troubleshooting-box h3 {
+    margin-top: 0;
+    color: #e74c3c; /* Reddish color for warning */
+    font-size: 1.6rem;
+}
+
+/* --- NEW STYLES START HERE --- */
+
+/* Story Box Styling */
+.story-box {
+    background-color: rgba(52, 152, 219, 0.05); /* Blue tint */
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem; /* Add some space before the footer */
+}
+
+.story-box h3 {
+    margin-top: 0;
+    color: #3498db; /* Blue color for story */
+    font-size: 1.6rem;
+}
+
+.story-box p {
+    font-size: 1.1rem; /* Match other guide text */
+}
+
+.story-box p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* --- NEW STYLES END HERE --- */
+
+/* Video Proof Box Styling */
+.video-proof-box {
+    background: radial-gradient(circle, var(--bg-secondary) 0%, transparent 80%), var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0; /* Add some vertical space */
+    text-align: center;
+}
+
+.video-proof-box h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.video-proof-box p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}

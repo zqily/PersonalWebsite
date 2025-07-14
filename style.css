@@ -1,0 +1,149 @@
+/* ./style.css */
+/* ---- style.css ---- */
+/* Page-specific styles for the zqil homepage. Assumes global.css is loaded. */
+
+/* ---- Page-Specific Variables ---- */
+:root {
+    --status-progress: #f39c12;   /* Orange */
+    --status-completed: #2ecc71;  /* Green */
+    --status-archived: #95a5a6;   /* Gray */
+    --status-ongoing: #3498db;    /* Blue */
+}
+
+/* ---- Hero Section ---- */
+h1 {
+    font-size: 4rem;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 30px var(--glow-color);
+}
+
+.hero {
+    position: relative; /* Needed for particle container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 90vh;
+    padding: 0 2rem;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Behind content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Above particles */
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 1rem auto 2rem;
+}
+
+/* ---- About Section ---- */
+.about-container {
+    display: flex;
+    gap: 2.5rem;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.bio { flex: 2; }
+.bio p { font-size: 1.1rem; color: var(--text-secondary); }
+.bio strong { color: var(--text-primary); }
+
+.stats-card {
+    flex: 1;
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.stat-number { display: block; font-size: 3rem; font-weight: 700; color: var(--accent-color); }
+.stat-label { color: var(--text-secondary); }
+
+.card-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+.card-button:hover { background-color: var(--accent-color); color: var(--bg-primary); }
+
+/* ---- Projects Section ---- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px var(--glow-color);
+    border-color: rgba(0, 245, 212, 0.3);
+}
+
+.project-card h3 { margin-bottom: 0.5rem; color: var(--text-primary); }
+.project-card p { color: var(--text-secondary); flex-grow: 1; }
+
+.project-status {
+    align-self: flex-start;
+    margin-top: 1.5rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.status-progress { background: linear-gradient(45deg, var(--status-progress), #e67e22); }
+.status-completed { background: linear-gradient(45deg, var(--status-completed), #27ae60); }
+.status-archived { background: linear-gradient(45deg, var(--status-archived), #7f8c8d); }
+.status-ongoing { background: linear-gradient(45deg, var(--status-ongoing), #2980b9); }
+
+/* ---- CTA Section ---- */
+.cta-section {
+    background: radial-gradient(circle, var(--bg-secondary) 0%, transparent 80%), var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 50px;
+    margin-top: 50px;
+}
+.cta-section p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* ---- Footer ---- */
+.footer-note { font-size: 0.9rem; font-style: italic; }

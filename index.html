@@ -1,0 +1,106 @@
+<!-- ./index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // Digital Hub</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Original CSS and Fonts -->
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">zqil</a>
+            <ul>
+                <li><a href="./projects/projects.html">Projects</a></li>
+                <li><a href="./tutorials/tutorials.html">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <!-- Particle background will be injected here by script.js -->
+        <div id="particles-js"></div>
+        <div class="hero-content" data-aos="fade-in" data-aos-delay="300">
+            <h1>Builder, Creator, Gamer.</h1>
+            <p class="subtitle">Welcome to my little digital sandbox. Here you'll find my coding projects, tutorials, and other resources I've built.</p>
+            <a href="http://discord.gg/guTq4922dm" target="_blank" class="cta-button">Join the Discord</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="content-section">
+            <h2 data-aos="fade-up">About Me</h2>
+            <div class="about-container">
+                <div class="bio" data-aos="fade-right" data-aos-delay="100">
+                    <p>Hey, I'm <strong>zqil</strong>, a 17-year-old creator and developer. My main focus is my YouTube channel, where I create content about Roblox's <em>The Strongest Battlegrounds</em> for my community.</p>
+                    <p>A unique thing about my workflow is that I build all my projects with the help of AI. I handle the concepts, direction, and fundamentals of how to run the code, while AI handles the heavy lifting of writing it. It's a powerful combination that allows me to bring ideas to life quickly.</p>
+                    <p>When I'm not creating, you'll find me online. If you need help with teamers in TSB or just want to chat, join my Discord and ping the <code>@Allies Of Heaven</code> role. I'm chronically online :p</p>
+                </div>
+                <div class="stats-card" data-aos="fade-left" data-aos-delay="200">
+                    <h3>My Platform</h3>
+                    <div class="stat">
+                        <span class="stat-number" id="subscriber-count">103K</span>
+                        <span class="stat-label">YouTube Subscribers</span>
+                    </div>
+                    <a href="https://www.youtube.com/@Zqily" target="_blank" class="card-button">Go to Channel</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2 data-aos="fade-up">My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Music Player v2</h3>
+                    <p>Currently in development. A complete rewrite of my original music player, built using better AI and contains more features that were previously unachievable.</p>
+                     <span class="project-status status-ongoing">Ongoing</span>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Pantheon</h3>
+                    <p>A minecraft plugin that acts more like a modpack. Adds AI-powered greek gods and many custom items into the game.</p>
+                    <span class="project-status status-progress">In Progress</span>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Utility Scripts</h3>
+                    <p>More small scripts than I can count. These are purpose-built tools for TSB, automation, and other personal needs.</p>
+                     <span class="project-status status-completed">Completed</span>
+                </div>
+                 <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Music Player v1</h3>
+                    <p>My first major coding project. A functional music player with many personalized features. Built with an older generation of AI.</p>
+                    <span class="project-status status-archived">Archived</span>
+                </div>
+            </div>
+        </section>
+        
+         <section id="community" class="content-section cta-section" data-aos="zoom-in-up">
+            <h2>Become a Part of the Community</h2>
+            <p>Whether you need backup in TSB or just want to connect with others, my Discord server is the place to be.</p>
+            <a href="http://discord.gg/guTq4922dm" target="_blank" class="cta-button">Join the Server</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="global.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!-- ./projects/utility/utility.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // Utility Scripts</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../global.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="utility.css"> 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">zqil</a>
+            <ul>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../../tutorials/tutorials.html">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-detail-hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>Utility Scripts</h1>
+            <p class="subtitle">A collection of small, purpose-built Python scripts that solve specific problems and streamline my workflow.</p>
+            <div class="project-detail-note" data-aos="fade-up" data-aos-delay="100">
+                <strong>Note:</strong> These are quick-and-dirty scripts built for personal use. They are not polished applications but functional tools that I use regularly.
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section project-detail-content">
+            <div data-aos="fade-up">
+                <div class="script-header">
+                    <h2><code>converter.py</code></h2>
+                    <a href="./assets/converter.py" class="script-download-button" download>Download Script</a>
+                </div>
+                <p>This is my most frequently used script, essential to my AI-assisted coding workflow. Since Google's AI Studio doesn't natively support many file types I work with (like <code>.js</code>, <code>.java</code>, or <code>.css</code>), I need to convert them to <code>.txt</code> to upload them for context. This script automates that entire process.</p>
+                <p>I just double-click the script, and it converts every specified file type in its directory into a text file and organizes them into "versions" folders. It's heavily optimized using concurrent processing to handle large projects quickly. I used this script extensively to build this very website!</p>
+            </div>
+            
+            <div class="image-showcase" data-aos="fade-up">
+                <figure>
+                    <img src="./assets/versions.png" alt="A screenshot of a folder structure showing multiple versioned subfolders created by the converter.py script.">
+                    <figcaption>The versions folder, automatically managed by <code>converter.py</code>.</figcaption>
+                </figure>
+            </div>
+
+            <div data-aos="fade-up">
+                <div class="script-header">
+                    <h2><code>convertdelete.py</code></h2>
+                    <a href="./assets/convertdelete.py" class="script-download-button" download>Download Script</a>
+                </div>
+                <p>A specialized version of the converter script, tailored for developing Minecraft plugins and mods. It performs the same conversion to <code>.txt</code> but also deletes the original files and folder structures. This is perfect for when I only need to grab the <code>src</code> folder and <code>gradle.properties</code> file from a project, drop them into a temporary folder with this script, and run it to get a clean text dump for the AI.</p>
+            </div>
+
+            <div data-aos="fade-up">
+                <div class="script-header">
+                    <h2><code>antiafk.py</code></h2>
+                    <a href="./assets/antiafk.py" class="script-download-button" download>Download Script</a>
+                </div>
+                <p>Does exactly what the name implies. It's a simple anti-AFK script that periodically sends input to prevent me from being kicked from Roblox for inactivity. Simple, but effective.</p>
+            </div>
+
+            <div data-aos="fade-up">
+                <div class="script-header">
+                    <h2><code>espammer.py</code></h2>
+                    <a href="./assets/espammer.py" class="script-download-button" download>Download Script</a>
+                </div>
+                <p>A hyper-specific script for a Roblox game called "Grow a Garden." It spams the 'E' key at an inhuman speed, automating a tedious in-game action.</p>
+            </div>
+
+            <div data-aos="fade-up">
+                 <div class="script-header">
+                    <h2><code>OBSOverlay.py</code> & <code>TSBOverlay.py</code></h2>
+                    <div>
+                        <a href="./assets/OBSOverlay.py" class="script-download-button" download>OBSOverlay</a>
+                        <a href="./assets/TSBOverlay.py" class="script-download-button" download>TSBOverlay</a>
+                    </div>
+                </div>
+                <p>These are two simple, non-invasive overlay scripts. The <strong>OBSOverlay</strong> creates a small circle on my screen that changes color depending on whether OBS is recording, paused, or stopped. It doesn't actually hook into OBS; I just manually sync it by starting the script when OBS isn't recording.</p>
+                <p>The <strong>TSBOverlay</strong> creates bars in the corner of my screen to visually track my dash cooldowns in <em>The Strongest Battlegrounds</em>. It's not linked to the game and isn't always accurate since many in-game actions can interrupt a dash, but it serves as a helpful visual reminder.</p>
+            </div>
+
+            <div data-aos="fade-up">
+                <div class="script-header">
+                    <h2>Celestial Sentry (<code>bot.py</code>)</h2>
+                    <a href="./assets/bot.py" class="script-download-button" download>Download Script</a>
+                </div>
+                <p>This is a custom Discord bot for my server, designed to solve a common problem in TSB: "teamers" who coordinate to ruin the fun for solo players. While not against the rules, it's a frustrating experience. Celestial Sentry provides an organized system for players to request backup from my community's <code>@Allies Of Heaven</code> role.</p>
+                <p>The bot is compiled into an executable and placed in my PC's startup folder, ensuring it's always online when my computer is running.</p>
+            </div>
+            
+            <div class="download-box" data-aos="fade-up">
+                <h3>View on GitHub</h3>
+                <p>The full code for Celestial Sentry is open-source and available on GitHub.</p>
+                <a href="https://github.com/zqily/CelestialSentry" target="_blank" class="cta-button">Go to Repository</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Global & Page-Specific Scripts -->
+    <script src="../../global.js"></script>
+    <script src="utility.js"></script>
+</body>
+</html>

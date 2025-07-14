@@ -1,0 +1,125 @@
+/* ./projects/projects.css */
+/* Page-specific styles for the projects page. Assumes global.css is loaded. */
+
+/* ---- Page-Specific Status Variables ---- */
+:root {
+    --status-progress: #f39c12;   /* Orange */
+    --status-completed: #2ecc71;  /* Green */
+    --status-archived: #95a5a6;   /* Gray */
+    --status-ongoing: #3498db;    /* Blue */
+}
+
+/* ---- Projects Hero Section ---- */
+.projects-hero {
+    text-align: center;
+    padding: 100px 2rem 50px; /* Less vertical padding than homepage hero */
+    background: linear-gradient(180deg, rgba(16, 16, 28, 0.5) 0%, var(--bg-primary) 100%);
+}
+
+.projects-hero h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 20px var(--glow-color);
+}
+
+.projects-hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 1rem auto 0;
+}
+
+/* ---- Project Grid & Cards ---- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Link that wraps the card */
+.project-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.project-card-link:hover {
+    transform: translateY(-8px);
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 2rem;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: left;
+    box-sizing: border-box; /* <-- FIX: Include padding in height calculation */
+}
+
+.project-card-link:hover .project-card {
+    box-shadow: 0 0 25px var(--glow-color);
+    border-color: rgba(0, 245, 212, 0.3);
+}
+
+.card-content h3 {
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+}
+
+.card-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
+/* Project Status Badges */
+.project-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.status-progress { background: linear-gradient(45deg, var(--status-progress), #e67e22); }
+.status-completed { background: linear-gradient(45deg, var(--status-completed), #27ae60); }
+.status-archived { background: linear-gradient(45deg, var(--status-archived), #7f8c8d); }
+.status-ongoing { background: linear-gradient(45deg, var(--status-ongoing), #2980b9); }
+
+.view-project {
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.project-card-link:hover .view-project {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+/* Adjust section padding for this page */
+.content-section {
+    padding-top: 50px;
+    text-align: left;
+}
+
+.content-section h2 {
+    text-align: center;
+}

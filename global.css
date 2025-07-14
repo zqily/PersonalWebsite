@@ -1,0 +1,178 @@
+/* ./global.css */
+/* ---- global.css ---- */
+/* Universal styles for any page on the site. */
+
+/* ---- Base & Typography ---- */
+:root {
+    --bg-primary: #0A0A12;
+    --bg-secondary: #10101C;
+    --bg-card: rgba(22, 22, 34, 0.5); /* Semi-transparent for glass effect */
+    --text-primary: #F0F0F5;
+    --text-secondary: #a0a0b0;
+    --accent-color: #00F5D4;      /* Vibrant Teal */
+    --accent-hover: #00E0C4;
+    --border-color: rgba(60, 60, 80, 0.5);
+    --glow-color: rgba(0, 245, 212, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    background-image: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 30%);
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+main {
+    position: relative;
+    z-index: 2;
+}
+
+h1, h2, h3 {
+    color: var(--text-primary);
+    margin-top: 0;
+    font-weight: 800;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+
+/* ---- Reusable Components ---- */
+
+/* Navigation */
+nav {
+    background-color: rgba(16, 16, 28, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+    color: var(--accent-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a {
+    color: var(--text-secondary);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+nav ul a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+nav ul a:hover {
+    color: var(--text-primary);
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    background: var(--accent-color);
+    color: var(--bg-primary);
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+.cta-button:hover {
+    background: var(--accent-hover);
+    color: var(--bg-primary);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+}
+
+/* ---- Layout & Sections ---- */
+
+.content-section {
+    padding: 100px 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Universal H2 style for section titles */
+.content-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}

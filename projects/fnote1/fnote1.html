@@ -1,0 +1,99 @@
+<!-- ./projects/fnote1/fnote1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // FNote v1</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../global.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="fnote1.css"> 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">zqil</a>
+            <ul>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../../tutorials/tutorials.html">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-detail-hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>FNote v1</h1>
+            <p class="subtitle">My first major AI-powered project: a personalized Python music player built to be simple, robust, and uniquely functional.</p>
+            <div class="project-detail-note" data-aos="fade-up" data-aos-delay="100">
+                <strong>Note:</strong> This was a huge learning experience. The UI is basic and the entire 2100+ lines of code are in a single file! It's a testament to how far my development practices have come.
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section project-detail-content">
+            <div data-aos="fade-up">
+                <h2>The One-File Wonder</h2>
+                <p>FNote v1 was my first dive into a large-scale application, I don't use it anymore though due to FNote v2 being objectively better. It's built entirely in <strong>Python</strong>, using the standard <code>tkinter</code> library for the GUI and <code>python-vlc</code> for its powerful audio playback capabilities. This choice, however, came with a catch: users must have VLC Media Player installed on their system for it to work.</p>
+                <p>Reflecting my novice understanding of software architecture at the time, the entire application—every function, class, and UI element—is contained within a single Python file that's over 2100 lines long. It's a bit of a monolith, but it works!</p>
+            </div>
+
+            <div class="download-box" data-aos="fade-up">
+                <h3>Try It Yourself</h3>
+                <p>You can download the full project from the GitHub repository. The release includes a pre-packaged executable with VLC already bundled, so you don't need to install anything extra.</p>
+                <a href="https://github.com/zqily/FNote-v1/" target="_blank" class="cta-button">Download from GitHub</a>
+            </div>
+
+            <div class="image-showcase" data-aos="fade-up">
+                <figure>
+                    <img src="./assets/fnote1.png" alt="Screenshot of the FNote v1 user interface.">
+                    <figcaption>The simple, function-over-form UI of FNote v1.</figcaption>
+                </figure>
+            </div>
+
+            <div data-aos="fade-up">
+                <h2>Core Features</h2>
+                <p>Despite its simple appearance, FNote v1 has a solid set of features that I wanted in a personal music player:</p>
+                <ul>
+                    <li>Standard music player controls (play, pause, skip).</li>
+                    <li>Song importing and playlist management.</li>
+                    <li>Loop and Shuffle modes.</li>
+                    <li>Ability to run on startup, so music plays as soon as the PC boots.</li>
+                    <li>And its most unique feature...</li>
+                </ul>
+            </div>
+
+            <div class="story-box" data-aos="fade-up">
+                <h3>The Killer Feature: Auto-Pause</h3>
+                <p>The standout feature of FNote v1 is its ability to <strong>auto-pause when external audio is detected.</strong> If I'm listening to music and a YouTube video starts playing, FNote automatically pauses. When the video's audio stops, FNote seamlessly resumes the music. This feature alone took a solid two weeks of the one-month development cycle.</p>
+                <p>It was a complex problem that required a multi-AI approach. I struggled with several models until <strong>Deepseek-R1</strong> managed to create a working prototype script. I then took that proof-of-concept to <strong>Gemini</strong>, which successfully integrated the functionality into the main tkinter application.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Global & Page-Specific Scripts -->
+    <script src="../../global.js"></script>
+    <script src="fnote1.js"></script>
+</body>
+</html>

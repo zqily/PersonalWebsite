@@ -1,0 +1,322 @@
+<!-- ./tutorials/obs/obs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // Ultimate OBS Guide</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../global.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="obs.css"> 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">zqil</a>
+            <ul>
+                <li><a href="../../projects/projects.html">Projects</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="guide-hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>The Ultimate OBS Guide</h1>
+            <p class="subtitle">My personal presets for high-quality recordings with minimal file size, optimized for modern NVIDIA GPUs (RTX 20-series and newer).</p>
+            <div class="guide-disclaimer" data-aos="fade-up" data-aos-delay="100">
+                <strong>Note:</strong> These settings were tested on a GeForce RTX 4060. Performance may vary on different hardware. The goal is to prioritize small file sizes while maintaining excellent visual quality.
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section guide-content">
+            <div data-aos="fade-up">
+                <p>I've spent a lot of time tweaking my OBS settings to find the perfect balance. For content creators, two things are always in conflict: recording quality and file size. High quality often means massive files that are slow to edit and upload. These presets use modern encoders like <strong>HEVC</strong> and <strong>AV1</strong> with <strong>CQP (Constant Quantization Parameter)</strong> rate control. CQP targets a consistent quality level, which is much more efficient for your disk space than a fixed bitrate (CBR/VBR).</p>
+            </div>
+
+            <!-- Preset 1 -->
+            <div data-aos="fade-up">
+                <h2>Preset 1: Near-Flawless HEVC</h2>
+                <p>This is my go-to for long-form YouTube videos. It produces a nearly lossless recording that holds up perfectly after YouTube's compression, without creating a gigabyte-per-minute file. I use HEVC because it's a huge improvement over H.264 and is fully supported by Adobe Premiere Pro, unlike AV1 (for now).</p>
+                <div class="preset-box">
+                    <h3>For Long-Form Content</h3>
+                    <div class="settings-grid">
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">Encoder</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> Selects the hardware or software used to compress your video.</p>
+                                        <p><strong>Recommendation:</strong> NVENC uses a dedicated chip on NVIDIA GPUs (RTX 20-series+), having minimal impact on game performance compared to x264 (CPU encoding).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">NVIDIA NVENC HEVC</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">Rate Control</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> Determines how the encoder allocates bitrate.</p>
+                                        <p><strong>Recommendation:</strong> CQP (Constant Quantization Parameter) targets a consistent visual quality level, letting the bitrate fluctuate. It's far more space-efficient than CBR (Constant Bitrate) for recordings.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">CQP</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">CQ Level</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> The target quality level for CQP. It's an instruction: "Make the video look this good."</p>
+                                        <p><strong>Recommendation:</strong> Lower numbers mean higher quality & larger files. Higher numbers mean more compression & smaller files. 25 is a great balance for high-quality source files.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">25</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">Preset</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> A scale from P1 (Fastest) to P7 (Slowest) that adjusts how much effort the encoder uses.</p>
+                                        <p><strong>Recommendation:</strong> P7 (Slowest) offers the best quality for a given file size. If you get "Encoder Overloaded" errors, dropping to P6 or P5 is the first and most effective fix.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">P7: Slowest (Best Quality)</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">Tuning</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> Optimizes the encoding process for a specific goal.</p>
+                                        <p><strong>Recommendation:</strong> 'High Quality' prioritizes visual fidelity, making it the best choice for recording. 'Low Latency' is better suited for streaming.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">High Quality</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">Multipass</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> Analyzes frames in multiple passes to better allocate bitrate.</p>
+                                        <p><strong>Recommendation:</strong> 'Two Passes (Quarter Res)' is a great balance. A fast low-res pass gives the full-res second pass valuable data to improve compression, especially in high-motion scenes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">Two Passes (Quarter Res)</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">Look-ahead</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> The encoder buffers future frames to make smarter compression decisions on the current frame.</p>
+                                        <p><strong>Recommendation:</strong> Keep enabled. It improves quality by anticipating scene changes. Disable if you experience encoder overload.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">Checked</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">Psycho Visual Tuning</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> Also called Adaptive Quantization. Spends more bits on parts of the scene the eye is drawn to and fewer on less noticeable areas.</p>
+                                        <p><strong>Recommendation:</strong> Always keep enabled. It significantly improves perceived quality for the same file size.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">Checked</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container">
+                                <span class="setting-name">Max B-frames</span>
+                                <div class="info-marker" tabindex="0">?
+                                    <div class="tooltip">
+                                        <p><strong>What it is:</strong> B-frames are frames that reference both past and future frames for maximum compression efficiency.</p>
+                                        <p><strong>Recommendation:</strong> 4 is the maximum and provides the best compression for NVENC. Lowering to 2 can help if you face encoder overload, but it will slightly increase file size.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="setting-value">4</span>
+                        </div>
+                    </div>
+                    <div class="file-size-info">
+                        <p><strong>Approximate File Size:</strong><br>
+                        144fps Recording: <strong>~324 MB/minute</strong><br>
+                        60fps Recording: <strong>~164 MB/minute</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preset 2 -->
+            <div data-aos="fade-up">
+                <h2>Preset 2: Acceptable HEVC</h2>
+                <p>I use this for short-form content like YouTube Shorts. It aggressively prioritizes file size, but the quality is still more than enough for mobile viewing. It uses the same high-quality settings as the first preset, but with a higher CQP value for more compression.</p>
+                <div class="preset-box">
+                    <h3>For Shorts & Clips</h3>
+                    <div class="settings-grid">
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Encoder</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Selects the hardware or software used to compress your video.</p><p><strong>Recommendation:</strong> NVENC uses a dedicated chip on NVIDIA GPUs (RTX 20-series+), having minimal impact on game performance compared to x264 (CPU encoding).</p></div></div></div>
+                            <span class="setting-value">NVIDIA NVENC HEVC</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Rate Control</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Determines how the encoder allocates bitrate.</p><p><strong>Recommendation:</strong> CQP (Constant Quantization Parameter) targets a consistent visual quality level, letting the bitrate fluctuate. It's far more space-efficient than CBR (Constant Bitrate) for recordings.</p></div></div></div>
+                            <span class="setting-value">CQP</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">CQ Level</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> The target quality level for CQP. It's an instruction: "Make the video look this good."</p><p><strong>Recommendation:</strong> For smaller files, a higher value like 31 works well. The quality is still great for short clips, but the file size is drastically reduced.</p></div></div></div>
+                            <span class="setting-value">31</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Preset</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> A scale from P1 (Fastest) to P7 (Slowest) that adjusts how much effort the encoder uses.</p><p><strong>Recommendation:</strong> P7 (Slowest) offers the best quality for a given file size. If you get "Encoder Overloaded" errors, dropping to P6 or P5 is the first and most effective fix.</p></div></div></div>
+                            <span class="setting-value">P7: Slowest (Best Quality)</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Tuning</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Optimizes the encoding process for a specific goal.</p><p><strong>Recommendation:</strong> 'High Quality' prioritizes visual fidelity, making it the best choice for recording. 'Low Latency' is better suited for streaming.</p></div></div></div>
+                            <span class="setting-value">High Quality</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Multipass</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Analyzes frames in multiple passes to better allocate bitrate.</p><p><strong>Recommendation:</strong> 'Two Passes (Quarter Res)' is a great balance. A fast low-res pass gives the full-res second pass valuable data to improve compression, especially in high-motion scenes.</p></div></div></div>
+                            <span class="setting-value">Two Passes (Quarter Res)</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Look-ahead</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> The encoder buffers future frames to make smarter compression decisions on the current frame.</p><p><strong>Recommendation:</strong> Keep enabled. It improves quality by anticipating scene changes. Disable if you experience encoder overload.</p></div></div></div>
+                            <span class="setting-value">Checked</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Psycho Visual Tuning</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Also called Adaptive Quantization. Spends more bits on parts of the scene the eye is drawn to and fewer on less noticeable areas.</p><p><strong>Recommendation:</strong> Always keep enabled. It significantly improves perceived quality for the same file size.</p></div></div></div>
+                            <span class="setting-value">Checked</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Max B-frames</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> B-frames are frames that reference both past and future frames for maximum compression efficiency.</p><p><strong>Recommendation:</strong> 4 is the maximum and provides the best compression for NVENC. Lowering to 2 can help if you face encoder overload, but it will slightly increase file size.</p></div></div></div>
+                            <span class="setting-value">4</span>
+                        </div>
+                    </div>
+                     <div class="file-size-info">
+                        <p><strong>Approximate File Size:</strong><br>
+                        144fps Recording: <strong>~101 MB/minute</strong><br>
+                        60fps Recording: <strong>~58 MB/minute</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preset 3 -->
+            <div data-aos="fade-up">
+                <h2>Preset 3: Near-Flawless AV1</h2>
+                <p>This is the future. I use this preset for recording any clips that I don't need to edit, like sending gameplay to friends on Discord. AV1 is an incredibly powerful codec. Don't be fooled by the high <code>CQP</code> value of 32; AV1 is so efficient that it looks as good as the HEVC preset at <code>CQP 25</code>, but with a drastically smaller file size.</p>
+                 <div class="preset-box">
+                    <h3>For Non-Edited Sharing</h3>
+                    <div class="settings-grid">
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Encoder</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Selects the hardware or software used to compress your video.</p><p><strong>Recommendation:</strong> NVENC AV1 is the next-gen encoder on RTX 40-series GPUs. It's ~30% more efficient than HEVC, meaning even smaller files at the same quality.</p></div></div></div>
+                            <span class="setting-value">NVIDIA NVENC AV1</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Rate Control</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Determines how the encoder allocates bitrate.</p><p><strong>Recommendation:</strong> CQP (Constant Quantization Parameter) targets a consistent visual quality level, letting the bitrate fluctuate. It's far more space-efficient than CBR (Constant Bitrate) for recordings.</p></div></div></div>
+                            <span class="setting-value">CQP</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">CQ Level</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> The target quality level for CQP. It's an instruction: "Make the video look this good."</p><p><strong>Recommendation:</strong> Because AV1 is more efficient, you can use a higher CQ Level. A value of 32 in AV1 looks comparable to 25 in HEVC but results in a much smaller file.</p></div></div></div>
+                            <span class="setting-value">32</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Preset</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> A scale from P1 (Fastest) to P7 (Slowest) that adjusts how much effort the encoder uses.</p><p><strong>Recommendation:</strong> P7 (Slowest) offers the best quality for a given file size. If you get "Encoder Overloaded" errors, dropping to P6 or P5 is the first and most effective fix.</p></div></div></div>
+                            <span class="setting-value">P7: Slowest (Best Quality)</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Tuning</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Optimizes the encoding process for a specific goal.</p><p><strong>Recommendation:</strong> 'High Quality' prioritizes visual fidelity, making it the best choice for recording. 'Low Latency' is better suited for streaming.</p></div></div></div>
+                            <span class="setting-value">High Quality</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Multipass</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Analyzes frames in multiple passes to better allocate bitrate.</p><p><strong>Recommendation:</strong> 'Two Passes (Quarter Res)' is a great balance. A fast low-res pass gives the full-res second pass valuable data to improve compression, especially in high-motion scenes.</p></div></div></div>
+                            <span class="setting-value">Two Passes (Quarter Res)</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Look-ahead</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> The encoder buffers future frames to make smarter compression decisions on the current frame.</p><p><strong>Recommendation:</strong> Keep enabled. It improves quality by anticipating scene changes. Disable if you experience encoder overload.</p></div></div></div>
+                            <span class="setting-value">Checked</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Psycho Visual Tuning</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> Also called Adaptive Quantization. Spends more bits on parts of the scene the eye is drawn to and fewer on less noticeable areas.</p><p><strong>Recommendation:</strong> Always keep enabled. It significantly improves perceived quality for the same file size.</p></div></div></div>
+                            <span class="setting-value">Checked</span>
+                        </div>
+                        <div class="setting">
+                            <div class="setting-title-container"><span class="setting-name">Max B-frames</span><div class="info-marker" tabindex="0">?<div class="tooltip"><p><strong>What it is:</strong> B-frames are frames that reference both past and future frames for maximum compression efficiency.</p><p><strong>Recommendation:</strong> 4 is the maximum and provides the best compression for NVENC. Lowering to 2 can help if you face encoder overload, but it will slightly increase file size.</p></div></div></div>
+                            <span class="setting-value">4</span>
+                        </div>
+                    </div>
+                     <div class="file-size-info">
+                        <p><strong>Approximate File Size:</strong><br>
+                        144fps Recording: <strong>~87 MB/minute</strong><br>
+                        60fps Recording: <strong>~55 MB/minute</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Proof Section -->
+            <div class="video-proof-box" data-aos="fade-up">
+                <h3>Seeing is Believing</h3>
+                <p>Words and settings can only say so much. I've compiled a Google Drive folder with sample recordings using these exact presets so you can see the quality and file sizes for yourself.</p>
+                <a href="https://drive.google.com/drive/folders/1c1qqexThquBXUjVa4iksbV5yP0a6J_JB?usp=sharing" target="_blank" class="cta-button">View Video Tests</a>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="troubleshooting-box" data-aos="fade-up">
+                <h3>Troubleshooting: Encoder Overload</h3>
+                <p>If OBS displays an "Encoding overloaded!" message, it means your GPU can't keep up. Try these steps in order:</p>
+                <ol>
+                    <li><strong>Lower the Preset:</strong> Change the <code>Preset</code> from <code>P7: Slowest</code> down to <code>P6</code> or <code>P5</code>. This provides the biggest performance boost with the smallest quality loss.</li>
+                    <li><strong>Reduce B-frames:</strong> Lower <code>Max B-frames</code> from <code>4</code> to <code>2</code>.</li>
+                    <li><strong>Disable Look-ahead:</strong> Uncheck the <code>Look-ahead</code> option to free up GPU resources.</li>
+                    <li><strong>Change Multipass Mode:</strong> Set <code>Multipass Mode</code> to <code>Single Pass</code>.</li>
+                    <li><strong>Increase CQ Level:</strong> As a last resort, increase the <code>CQ Level</code> by 1 or 2 (e.g., from 25 to 27). This directly reduces quality but significantly lessens the load on your GPU.</li>
+                </ol>
+            </div>
+
+            <!-- Story Box -->
+            <div class="story-box" data-aos="fade-up">
+                <h3>A Quick Story: The 4TB Mistake</h3>
+                <p>Before I discovered the magic of CQP, my OBS settings were... inefficient, to say the least. I used the standard H.264 encoder with CBR (Constant Bitrate) cranked up to an absurd level, thinking "more bitrate is always better." This resulted in recordings that were around <strong>600+ MB per minute</strong>.</p>
+                <p>I have a 1TB SSD dedicated <em>entirely</em> to storing my raw gameplay footage. Because I record content almost every day, I had to completely wipe that 1TB drive <strong>four separate times in a single year</strong>. That's 4TB of data I had to manage and delete, just to make room for more.</p>
+                <p>That's the real-world problem these presets solve. They save you from the headache of constantly managing disk space, letting you focus on creating content instead of deleting it. Learn from my mistakes!</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Global & Page-Specific Scripts -->
+    <script src="../../global.js"></script>
+    <script src="obs.js"></script>
+</body>
+</html>

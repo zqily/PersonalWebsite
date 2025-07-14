@@ -1,0 +1,138 @@
+/* ./tutorials/ai/ai.css */
+
+/* --- AI Arena (Pokedex) --- */
+.ai-arena {
+    margin-top: 2rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.ai-selectors {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ai-selector {
+    flex: 1;
+    padding: 1rem;
+    background-color: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-top-left-radius: 11px; /* Match parent */
+    border-top-right-radius: 11px;
+    position: relative;
+}
+
+.ai-selector:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+}
+
+.ai-selector::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Sit on top of the border */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.ai-selector.active {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+}
+
+.ai-selector.active::after {
+    transform: scaleX(1);
+}
+
+.ai-selector:hover:not(.active) {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ai-card {
+    padding: 2rem;
+    display: none; /* Controlled by JS */
+}
+
+.ai-card.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ai-card h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--accent-color);
+}
+
+.ai-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+
+.ai-card li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.ai-card li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 0.8em;
+}
+
+/* --- Prompt Box --- */
+.prompt-box {
+    background-color: var(--bg-secondary);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-family: monospace;
+}
+
+.prompt-box p {
+    font-size: 1rem !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 1rem;
+}
+
+.prompt-box p:last-child {
+    margin-bottom: 0;
+}
+
+.prompt-box ol {
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.prompt-box li {
+    font-size: 1rem !important;
+    padding-left: 0.5rem;
+}
+
+.prompt-box strong {
+    color: var(--accent-color);
+}

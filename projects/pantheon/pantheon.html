@@ -1,0 +1,92 @@
+<!-- ./projects/pantheon/pantheon.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // Pantheon</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../global.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="pantheon.css"> 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">zqil</a>
+            <ul>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../../tutorials/tutorials.html">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-detail-hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>Pantheon</h1>
+            <p class="subtitle">A Minecraft plugin inspired by unfair gods, powered by real AI, and built for a truly dynamic survival experience.</p>
+            <div class="project-detail-note" data-aos="fade-up" data-aos-delay="100">
+                <strong>Status: In Progress.</strong> Note that this is a Minecraft <strong>plugin</strong>, not a mod. While I'm pushing the limits, it can't achieve the same level of customization as a full mod. The goal is to see how far a plugin can go.
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section project-detail-content">
+            <div class="story-box" data-aos="fade-up">
+                <h3>The Unfair Gods Who Started It All</h3>
+                <p>Pantheon was born from frustration. I was playing on a friend's SMP server, which had a cool gimmick: at night, the admins would roleplay as Greek gods, making deals with players for OP gear, blessings, or even a chance to fight them. It was awesome, until the admins started picking sides.</p>
+                <p>Their team would lose a fight? No problem, just reroll the server to undo the damage. My team lost? Too bad, our stuff was gone for good. The discrimination and toxicity was too much for me and my friends, so I left. But an idea sparked: <strong>"What if I could make it myself, but make it fair?"</strong></p>
+            </div>
+
+            <div data-aos="fade-up">
+                <h2>AI-Fueled Development</h2>
+                <p>Following my AI-assisted workflow, I started coding. The first prototype was a huge success. I managed to link Gemini's API directly into the plugin's code and even set up a basic memory system for the AI gods. But I quickly hit a wall; the AI models at the time just weren't powerful enough for the complexity I wanted. So, I scratched the project.</p>
+                <p>Then, a new generation of AI came along, and everything changed. A task that once took me two weeks of constant, frustrating trial and error now took only <strong>two days</strong>. That success gave me the confidence that the rest of the project, while still a massive undertaking, was now achievable. My vision is something akin to Wynncraft, but without the rigid roleplaying—a world filled with custom models and textures. It's still a long road, but the most advanced part of the plugin is already working.</p>
+            </div>
+            
+            <div data-aos="fade-up">
+                <h2>The Elden Ring Dilemma</h2>
+                <p>The project is about 20% complete. Most core progression and important features are in... except for fighting the gods. This is where the real challenge lies. I'm envisioning boss fights on the level of Elden Ring—complex, challenging, and epic. While current AI is probably good enough to code a simple boss, a high-complexity fight like Zeus (the final boss) would take weeks, if not months, of wrestling with the AI for a single boss.</p>
+                <p>Instead of hail-marrying my way into the hardest part and ending up with a mediocre result, I've made a strategic choice: <strong>I'm waiting.</strong> I'm pausing the project while waiting for AI technology to progress to a point where it can help me create the high-quality boss fights I'm envisioning. It's better to wait and do it right.</p>
+            </div>
+
+            <div data-aos="fade-up">
+                <h2>Core Mechanics: A Sneak Peek</h2>
+                <p>Here are some of the key features I've built so far from the 100+ custom items, 25+ custom blocks, and 8+ custom entities:</p>
+                <ul>
+                    <li><strong>Custom Projectile System:</strong> Four types of projectiles exist: standard gravity-based (arrows), non-gravity (fireballs), a slow-moving area-of-effect version, and lasers. Think of the Electric Peashooter from PvZ2—the AOE projectile damages any enemy that gets close to it in flight.</li>
+                    <li><strong>Custom Altar System:</strong> To communicate with gods, you must build altars. Each god requires a unique altar with its own color palette, style, and a custom block at its "core," similar to how a beacon works.</li>
+                    <li><strong>AI God Communication:</strong> Summoning a god opens a "new chat" with them, and the plugin remembers your conversation history. You can request blessings (permanent status effects) or trade items for divine gear using Nether Stars as the primary currency.</li>
+                    <li><strong>Custom Abilities:</strong> Many custom items, and all divine items, have unique abilities—from pickaxes that contain a pocket inventory to swords that can pull enemies towards you.</li>
+                    <li><strong>Custom Events:</strong> Getting recipes for altar cores will take you on dangerous adventures. To get the Hades altar core, for example, you have to find a "rupture" in a Deep Dark biome. Getting too close swarms you with hordes of invulnerable, regenerating monsters that get stronger over time. Your only goal is to break the obsidian-like block at the rupture's center while surviving the onslaught of 60+ mobs.</li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Global & Page-Specific Scripts -->
+    <script src="../../global.js"></script>
+    <script src="pantheon.js"></script>
+</body>
+</html>

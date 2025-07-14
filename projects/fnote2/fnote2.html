@@ -1,0 +1,101 @@
+<!-- ./projects/fnote2/fnote2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // FNote v2</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../global.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="fnote2.css"> 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">zqil</a>
+            <ul>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../../tutorials/tutorials.html">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-detail-hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>FNote v2</h1>
+            <p class="subtitle">My magnum opus (for now). A ground-up rewrite of my music player, featuring a modern UI and a feature set that rivals commercial apps, all built with a next-gen AI.</p>
+            <div class="project-detail-note" data-aos="fade-up" data-aos-delay="100">
+                <strong>Status: Ongoing.</strong> The core application is complete and used daily. Only the settings UI needs to be finalized. It's a massive leap forward from its predecessor.
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section project-detail-content">
+            <div data-aos="fade-up">
+                <h2>From Monolith to Masterpiece</h2>
+                <p>With the... unimpressive results and horrible underlying architecture of <a href="../fnote1/fnote1.html">FNote v1</a> (all 2100+ lines in one file), I chose to abandon the project and start from scratch. FNote v1 was built with an older AI, and I knew the newer models were capable of so much more. This time, I also made a crucial architectural decision: use an <strong>HTML/CSS/JS frontend with a Python backend</strong>.</p>
+                <p>To this day, AIs still suck at creating complex UIs with Python libraries like `tkinter` or `PyQt`. But they are masters of web technologies—this very website is proof. By leveraging this strength, I knew I could create something special. The very first prototype Gemini produced had a solid layout, and from there, I continued to build. I'm a pretty big UI nerd and a perfectionist, so when I see a feature that isn't implemented just the way I want it—maybe it requires an extra click, is in the wrong place, or is just badly designed—I'll have the AI modify it over and over until it looks <strong>just right</strong>. The result is what I like to call my "Notion-inspired" masterpiece, even if that's just a bunch of bullshit. Notion has research teams; I just asked Gemini to do the research for me.</p>
+            </div>
+
+            <div class="image-showcase" data-aos="fade-up">
+                <figure>
+                    <img src="./assets/fnote2.png" alt="Screenshot of the sleek, modern FNote v2 user interface.">
+                    <figcaption>The current state of the FNote v2 UI. Clean, functional, and powerful.</figcaption>
+                </figure>
+            </div>
+
+            <div data-aos="fade-up">
+                <h2>Optimized to the Brink</h2>
+                <p>Currently, the only part lacking is the settings UI, which is still a bit of a mess. But everything else is perfect. I've been using it every single day, and it's proven to be incredibly robust with zero bugs. I've optimized the backend Python code so heavily that when I asked the AI for more recommendations, it started flagging <strong>CSS properties</strong> as high-impact problems. That's when you know your backend is solid.</p>
+            </div>
+            
+            <div data-aos="fade-up">
+                <h2>A Symphony of Features</h2>
+                <p>FNote v2 includes every feature from its predecessor and introduces a host of powerful new ones:</p>
+                <ul>
+                    <li><strong>Modern UI:</strong> All the basic music player features (play/pause, seek, shuffle, loop) wrapped in a clean interface with slick animations.</li>
+                    <li><strong>Song Markers:</strong> Per-song markers allow you to highlight and jump to the best part of any track.</li>
+                    <li><strong>Comprehensive Tagging:</strong> A powerful tagging system lets you create custom tags and apply them to individual or multiple songs for easy filtering.</li>
+                    <li><strong>Playlists & Queues:</strong> Full playlist and queue management.</li>
+                    <li><strong>Import/Export:</strong> Share and back up your playlists with the custom <code>.fnlist</code> file type—a glorified zip file containing all song data, covers, and a JSON manifest.</li>
+                    <li><strong>Windows Integration:</strong> An optional setting registers the <code>.fnlist</code> file type, allowing you to import playlists simply by double-clicking them.</li>
+                    <li><strong>YT-DLP Integration:</strong> Download songs or entire playlists from the web directly into the app.</li>
+                    <li><strong>The Prized Feature:</strong> My favorite feature from v1, perfected. The app auto-pauses when it detects external audio and resumes when it's gone. You can even manage an ignore list for apps like Lively Wallpaper or FxSound.</li>
+                </ul>
+            </div>
+            
+            <div class="story-box" data-aos="fade-up">
+                <h3>The Full Backstory</h3>
+                <p>FNote v2 is the result of lessons learned from my very first major project. To fully appreciate the journey and the massive leap in quality, you need to see where it all started.</p>
+                <p>Check out the story of <a href="../fnote1/fnote1.html">FNote v1</a>, the one-file wonder that sparked it all.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Global & Page-Specific Scripts -->
+    <script src="../../global.js"></script>
+    <script src="fnote2.js"></script>
+</body>
+</html>

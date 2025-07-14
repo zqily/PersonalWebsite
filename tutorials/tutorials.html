@@ -1,0 +1,109 @@
+<!-- ./tutorials/tutorials.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // Tutorials</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../global.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="tutorials.css"> 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">zqil</a>
+            <ul>
+                <li><a href="../projects/projects.html">Projects</a></li>
+                <li><a href="#">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="tutorials-hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>Tutorials & Guides</h1>
+            <p class="subtitle">A collection of guides to share my workflow, from content creation to AI-assisted coding.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="tutorial-grid">
+                <!-- Tutorial Card 1: OBS Guide -->
+                <a href="./obs/obs.html" class="tutorial-card-link" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tutorial-card">
+                        <div class="card-content">
+                            <h3>Ultimate OBS Guide</h3>
+                            <p>Learn how to set up OBS for recording the best quality videos while taking up the least amount of disk space.</p>
+                        </div>
+                        <div class="card-footer">
+                             <span class="card-tag">Content Creation</span>
+                             <span class="read-more">Read Guide →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tutorial Card 2: AI Coding -->
+                <a href="./ai/ai.html" class="tutorial-card-link" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tutorial-card">
+                         <div class="card-content">
+                            <h3>AI-Powered Development</h3>
+                            <p>My complete workflow for building projects with AI. Learn how to write effective prompts, manage code, and accelerate your development.</p>
+                        </div>
+                        <div class="card-footer">
+                             <div>
+                                <span class="card-tag">Development</span>
+                                <span class="card-tag">AI</span>
+                             </div>
+                             <span class="read-more">Read Guide →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tutorial Card 3: Editing Guide -->
+                <a href="./editing/editing.html" class="tutorial-card-link" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tutorial-card">
+                        <div class="card-content">
+                            <h3>My Video Editing Workflow</h3>
+                            <p>A breakdown of my "Quantity → Quality" editing style, focusing on flow, gaze manipulation, and music synchronization.</p>
+                        </div>
+                        <div class="card-footer">
+                            <div>
+                                <span class="card-tag">Content Creation</span>
+                                <span class="card-tag">Editing</span>
+                            </div>
+                            <span class="read-more">Read Guide →</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Global & Page-Specific Scripts -->
+    <script src="../global.js"></script>
+    <script src="tutorials.js"></script>
+</body>
+</html>
