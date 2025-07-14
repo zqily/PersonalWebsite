@@ -4,8 +4,7 @@
 
 This repository contains the source code for my personal portfolio website. It's a static site built with HTML, CSS, and a little bit of JavaScript to showcase my projects and skills.
 
-![Portfolio Screenshot](./images/portfolio-screenshot.png)
-*(You should replace this with an actual screenshot of your website. A good path is to create an `images` folder in your repository and put the screenshot there.)*
+<img width="1885" height="993" alt="image" src="https://github.com/user-attachments/assets/e2406423-490c-46e9-b143-d5990d7ffa46" />
 
 ## About This Project
 
