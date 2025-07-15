@@ -1,6 +1,6 @@
 # My Personal Portfolio
 
-[![Live Site](https://img.shields.io/badge/View%20Live-brightgreen?style=for-the-badge)](zqil.net)
+[![Live Site](https://img.shields.io/badge/View%20Live-brightgreen?style=for-the-badge)](https://zqil.net)
 
 This repository contains the source code for my personal portfolio website. It's a static site built with HTML, CSS, and a little bit of JavaScript to showcase my projects and skills.
 
