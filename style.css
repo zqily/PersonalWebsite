@@ -8,6 +8,7 @@
     --status-completed: #2ecc71;  /* Green */
     --status-archived: #95a5a6;   /* Gray */
     --status-ongoing: #3498db;    /* Blue */
+    --status-future: #8e44ad;     /* Purple */
 }
 
 /* ---- Hero Section ---- */
@@ -131,6 +132,7 @@ h1 {
 .status-completed { background: linear-gradient(45deg, var(--status-completed), #27ae60); }
 .status-archived { background: linear-gradient(45deg, var(--status-archived), #7f8c8d); }
 .status-ongoing { background: linear-gradient(45deg, var(--status-ongoing), #2980b9); }
+.status-future { background: linear-gradient(45deg, var(--status-future), #9b59b6); }
 
 /* ---- CTA Section ---- */
 .cta-section {
