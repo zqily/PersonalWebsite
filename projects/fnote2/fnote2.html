@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zqil // FNote v2</title>
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     
     <!-- Animation Libraries -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -37,7 +38,7 @@
             <h1>FNote v2</h1>
             <p class="subtitle">My magnum opus (for now). A ground-up rewrite of my music player, featuring a modern UI and a feature set that rivals commercial apps, all built with a next-gen AI.</p>
             <div class="project-detail-note" data-aos="fade-up" data-aos-delay="100">
-                <strong>Status: Ongoing.</strong> The core application is complete and used daily. Only the settings UI needs to be finalized. It's a massive leap forward from its predecessor.
+                <strong>Status: Archived.</strong> Production is complete, but the project is held back by the limitations of then-current AI and my own ambition. Built entirely with vanilla JS, it's a feature-rich but flawed piece I've learned a ton from.
             </div>
         </div>
     </header>
@@ -47,19 +48,19 @@
             <div data-aos="fade-up">
                 <h2>From Monolith to Masterpiece</h2>
                 <p>With the... unimpressive results and horrible underlying architecture of <a href="../fnote1/fnote1.html">FNote v1</a> (all 2100+ lines in one file), I chose to abandon the project and start from scratch. FNote v1 was built with an older AI, and I knew the newer models were capable of so much more. This time, I also made a crucial architectural decision: use an <strong>HTML/CSS/JS frontend with a Python backend</strong>.</p>
-                <p>To this day, AIs still suck at creating complex UIs with Python libraries like `tkinter` or `PyQt`. But they are masters of web technologies—this very website is proof. By leveraging this strength, I knew I could create something special. The very first prototype Gemini produced had a solid layout, and from there, I continued to build. I'm a pretty big UI nerd and a perfectionist, so when I see a feature that isn't implemented just the way I want it—maybe it requires an extra click, is in the wrong place, or is just badly designed—I'll have the AI modify it over and over until it looks <strong>just right</strong>. The result is what I like to call my "Notion-inspired" masterpiece, even if that's just a bunch of bullshit. Notion has research teams; I just asked Gemini to do the research for me.</p>
+                <p>To this day, AIs still suck at creating complex UIs with Python libraries like `tkinter` or `PyQt`. But they are masters of web technologies—this very website is proof. By leveraging this strength, I knew I could create something special. The very first prototype Gemini produced had a solid layout, and from there, I continued to build. The result is a testament to the power of this approach, though my ambition to write everything in vanilla JS without a framework like React ultimately introduced a host of bugs. I call it my "Notion-inspired" lesson in humility.</p>
             </div>
 
             <div class="image-showcase" data-aos="fade-up">
                 <figure>
                     <img src="./assets/fnote2.png" alt="Screenshot of the sleek, modern FNote v2 user interface.">
-                    <figcaption>The current state of the FNote v2 UI. Clean, functional, and powerful.</figcaption>
+                    <figcaption>The final state of the FNote v2 UI. Clean, functional, and ambitious.</figcaption>
                 </figure>
             </div>
 
             <div data-aos="fade-up">
-                <h2>Optimized to the Brink</h2>
-                <p>Currently, the only part lacking is the settings UI, which is still a bit of a mess. But everything else is perfect. I've been using it every single day, and it's proven to be incredibly robust with zero bugs. I've optimized the backend Python code so heavily that when I asked the AI for more recommendations, it started flagging <strong>CSS properties</strong> as high-impact problems. That's when you know your backend is solid.</p>
+                <h2>Ambition and Its Pitfalls</h2>
+                <p>Despite my best efforts to optimize, the project became a victim of its own complexity. By choosing to write everything in vanilla JavaScript, I essentially had to reinvent the wheel for features that frameworks like React or Svelte provide for free. This led to a brittle codebase where about 90% of my intended features were implemented, but a frustrating 40% of those were plagued with bugs. It's a classic case of biting off more than you can chew, and a valuable lesson in choosing the right tools for the job.</p>
             </div>
             
             <div data-aos="fade-up">
@@ -67,6 +68,7 @@
                 <p>FNote v2 includes every feature from its predecessor and introduces a host of powerful new ones:</p>
                 <ul>
                     <li><strong>Modern UI:</strong> All the basic music player features (play/pause, seek, shuffle, loop) wrapped in a clean interface with slick animations.</li>
+                    <li><strong>Miniplayer Mode:</strong> A sleek, compact miniplayer that expands on hover, providing full functionality without taking up screen space.</li>
                     <li><strong>Song Markers:</strong> Per-song markers allow you to highlight and jump to the best part of any track.</li>
                     <li><strong>Comprehensive Tagging:</strong> A powerful tagging system lets you create custom tags and apply them to individual or multiple songs for easy filtering.</li>
                     <li><strong>Playlists & Queues:</strong> Full playlist and queue management.</li>
@@ -75,6 +77,12 @@
                     <li><strong>YT-DLP Integration:</strong> Download songs or entire playlists from the web directly into the app.</li>
                     <li><strong>The Prized Feature:</strong> My favorite feature from v1, perfected. The app auto-pauses when it detects external audio and resumes when it's gone. You can even manage an ignore list for apps like Lively Wallpaper or FxSound.</li>
                 </ul>
+            </div>
+
+            <div class="download-box" data-aos="fade-up">
+                <h3>View on GitHub</h3>
+                <p>The full code for FNote v2 is open-source and available on GitHub. Feel free to explore the codebase, but be warned: it's a vanilla JS rabbit hole!</p>
+                <a href="https://github.com/zqily/FNote-v2" target="_blank" class="cta-button">Go to Repository</a>
             </div>
             
             <div class="story-box" data-aos="fade-up">
