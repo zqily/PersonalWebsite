@@ -1,0 +1,159 @@
+/* ./projects/pcplanner/pcplanner.css */
+/* Styles for the PC Planner project page. Borrows from fnote1.css */
+
+/* Hero section for the project detail */
+.project-detail-hero {
+    text-align: center;
+    padding: 100px 2rem 50px;
+    background: linear-gradient(180deg, rgba(16, 16, 28, 0.5) 0%, var(--bg-primary) 100%);
+}
+
+.project-detail-hero h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 20px var(--glow-color);
+}
+
+.project-detail-hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 1rem auto 0;
+}
+
+.project-detail-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background-color: rgba(243, 156, 18, 0.1);
+    border: 1px solid rgba(243, 156, 18, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* Main content area for the guide */
+.project-detail-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: left;
+}
+
+.project-detail-content h2 {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    display: block; /* Override global styles */
+}
+
+/* Remove ::after from global h2 */
+.project-detail-content h2::after {
+    display: none;
+}
+
+
+.project-detail-content p, .project-detail-content li {
+    line-height: 1.8;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.project-detail-content strong {
+    color: var(--text-primary);
+}
+
+.project-detail-content code {
+    background-color: var(--bg-secondary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--accent-hover);
+    font-size: 1rem;
+}
+
+.project-detail-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-detail-content ul li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.project-detail-content ul li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 0.9em;
+}
+
+/* Story Box Styling (reused from obs.css) */
+.story-box {
+    background-color: rgba(52, 152, 219, 0.05); /* Blue tint */
+    border: 1px solid rgba(52, 152, 219, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.story-box h3 {
+    margin-top: 0;
+    color: #3498db;
+    font-size: 1.6rem;
+}
+
+/* Image Showcase */
+.image-showcase {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.image-showcase img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.image-showcase figcaption {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Download Box Styling */
+.download-box {
+    background: radial-gradient(circle, var(--bg-secondary) 0%, transparent 80%), var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.download-box h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.download-box p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}

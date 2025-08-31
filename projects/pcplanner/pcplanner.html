@@ -1,0 +1,93 @@
+<!-- ./projects/pcplanner/pcplanner.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zqil // PC Planner</title>
+    
+    <!-- Animation Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../../global.css">
+    
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="pcplanner.css"> 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">zqil</a>
+            <ul>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../../tutorials/tutorials.html">Tutorials</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-detail-hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>PC Planner</h1>
+            <p class="subtitle">An automated PC build planner that scrapes live prices from Tokopedia to keep my dream build up-to-date, saving hours of manual calculations.</p>
+            <div class="project-detail-note" data-aos="fade-up" data-aos-delay="100">
+                <strong>Status: Completed.</strong> A personal tool built to solve a personal problem. It's a Python app using PyQt6 for the UI and BeautifulSoup4 for web scraping.
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section project-detail-content">
+            <div data-aos="fade-up">
+                <h2>The Manual Price-Tracking Nightmare</h2>
+                <p>I've been planning a new PC build for a while, but keeping track of component prices was a massive headache. Every few days, I'd have to manually visit dozens of e-commerce pages, copy the new prices into a Notion, and recalculate the total cost. It was tedious, repetitive, and exactly the kind of problem that automation was made to solve.</p>
+                <p>So, I built this PC Planner. It's a simple Python application where I can input the Tokopedia links for all my desired components. With the click of a button, it scrapes the live price for every item and instantly updates the total cost. What used to be a 15-minute chore is now a 5-second task.</p>
+            </div>
+
+            <div class="image-showcase" data-aos="fade-up">
+                <figure>
+                    <img src="./assets/pcplanner.png" alt="Screenshot of the PC Planner application, showing a list of components with their scraped prices and a total cost.">
+                    <figcaption>The main interface of the PC Planner, with separate tabs for components and peripherals.</figcaption>
+                </figure>
+            </div>
+
+            <div data-aos="fade-up">
+                <h2>Technical Tidbits</h2>
+                <p>The app is built with <strong>Python</strong>, using <strong>PyQt6</strong> for the desktop GUI and <strong>BeautifulSoup4</strong> for web scraping. My primary goal was to make a tool for myself, so it's specifically designed to scrape from <strong>Tokopedia</strong>, the main e-commerce site I use.</p>
+                <p>I initially tried to add support for Shopee, but their anti-bot measures are significantly more robust and I had to abandon the effort. Curiously, I also experimented with more advanced scraping libraries like Playwright, but Tokopedia's detection systems blocked them. Surprisingly, the simpler approach with BeautifulSoup worked perfectly and was more than fast enough for my needs, especially after I implemented multi-threading to scrape all the component pages concurrently.</p>
+                <ul>
+                    <li><strong>Live Price Scraping:</strong> Automatically fetches item images and prices from any valid Tokopedia URL.</li>
+                    <li><strong>Multi-threaded Performance:</strong> Each component is scraped in its own thread, making the update process fast and efficient.</li>
+                    <li><strong>Organized Layout:</strong> The UI has separate tabs for core PC components and peripherals to keep the build organized.</li>
+                    <li><strong>Automatic Totals:</strong> The total cost of the build is calculated and displayed in real-time.</li>
+                </ul>
+            </div>
+
+            <div class="download-box" data-aos="fade-up">
+                <h3>View on GitHub</h3>
+                <p>The full code for the PC Planner is open-source and available on GitHub. Feel free to explore the codebase and adapt it for your own use.</p>
+                <a href="https://github.com/zqily/pcplanner" target="_blank" class="cta-button">Go to Repository</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="copyright-year">2024</span> zqil. All rights reserved.</p>
+         <p class="footer-note">Built with AI, curated by a human.</p>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Global & Page-Specific Scripts -->
+    <script src="../../global.js"></script>
+    <script src="pcplanner.js"></script>
+</body>
+</html>
